@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Sarvade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+
+            <nav>
+                <img src="Screenshot 2022-12-23 224803.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li>
+                        <a href="#header">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <i onclick="openemenu()"></i>
+                </ul>
+                <i onclick="closemenu()"></i>
+            </nav>
+            <div class="header-text">
+                <marquee>
+                    <p>Front End Developer</p>
+                </marquee>
+                <h1>
+                    Hi, I'm <br> <span>Aditya</span> Sarvade
+                </h1>
+
+            </div>
+
+        </div>
+        <!--------------------------------------------------->
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="IMG_7240.JPG">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title"> About Me</h1>
+                    <br>
+                    <p>
+                        My name is Aditya Sarvade I'm Front End Developer proficient in HTML,CSS and SQL interseted in
+                        VueJS and Angular. also Knowelage about the Amazon Web Services,Software AG tool.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li>
+                                <span>HTML </span>
+                                <br>
+                                <br>
+                            <li>
+                                <span>CSS </span>
+                                <br>
+                                <br>
+                            </li>
+                            <li>
+                                <span>JavaScript </span>
+                                <br>
+                                <br>
+                            </li>
+                            <li>
+                                <span>SQL </span>
+                                <br>
+                                <br>
+                            </li>
+                            <li>
+                                <span>VueJS </span>
+                                <br>
+                                <br>
+                            </li>
+                            <li>
+                                <span>Angular </span>
+                                <br>
+                                <br>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<div class="tab-contents" id="experience">
+                        <ul>
+                            <li>
+                                <span>Feb-2022 : Nov-2022 </span>
+                                <br>
+                                <br>
+                                Persistent Systems
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>
+                                <span>2014 </span>
+                                <br>
+                                <br>
+                                SSC
+                                <br>
+                                Percentage:- 71%
+                            <li>
+                                <span>2018 </span>
+                                <br>
+                                <br>
+                                Diploma in Electronics And Telecommunication
+                                <br>
+                                Percentage:- 73%
+                            </li>
+                            <li>
+                                <span>2021 </span>
+                                <br>
+                                <br>
+                                Engineering in Electronics
+                                <br>
+                                CGPA:- 8.0
+                            </li>
+                        </ul>
+                    </div>--->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>
+                    Email:- adityasarvade39@gmail.com</p>
+                <p>MobileNo:- 8793896039</p>
+                <br>
+                <br>
+                <div class="social-icons">
+
+                    <a href="https://www.linkedin.com/in/aditya-sarvade-7a30971b0"><i
+                            class="fa-brands fa-linkedin"></i>Linkedin</a>
+
+                </div>
+                <a href="Aditya_sarvade_8793896039.pdf" do wnload class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="button" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+
+        </div>
+        <div class="copyright">
+            <p>Copyright @Aditya </p>
+        </div>
+    </div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");//////experience section
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");///sidemenu bar 
+
+        function openemenu() {
+            sidemenu.style.right = "0";
+        }
+        function closeemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwI4lmkbU2SSvOGwQ9it_LIWKHZRFr3aciWAPpYVNISrhxKY91MdpS6XeZcx4yMHrFI/exec'
+        const form = document.forms['submit-to-google-sheet']////google shit
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "message sent successfully !"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+
+</html>

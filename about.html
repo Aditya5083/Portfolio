@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="300"></canvas>
+    <br />
+    <button id="hitButton">Hit</button>
+    <button id="resetButton">Reset</button>
+    <script>
+        // Get the canvas element 
+        const canvas = document.getElementById("myCanvas");
+        // Get the 2D context of the canvas 
+        const ctx = canvas.getContext("2d");
+
+        // Set initial position and color of the circle 
+        let x = 50;
+        let y = 150;
+        let color = "red";
+
+        // Set initial position and color of the arrow 
+        let arrowX = 450;
+        let arrowY = 150;
+        let arrowColor = "blue";
+
+        // Draw the circle and arrow on the canvas 
+        function draw() {
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(arrowX, arrowY - 20);
+            ctx.lineTo(arrowX, arrowY + 20);
+            ctx.lineTo(arrowX + 40, arrowY);
+            ctx.closePath();
+            ctx.fillStyle = arrowColor;
+            ctx.fill();
+        }
+        draw();
+
+        // Set hit button event listener 
+        document.getElementById("hitButton").addEventListener("click", function () {
+            // Animate the arrow moving towards the circle 
+            let interval = setInterval(function () {
+                arrowX -= 10;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                draw();
+                if (arrowX <= x) {
+                    clearInterval(interval);
+                    color = "green";
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    draw();
+                }
+            }, 100);
+        });
+
+        // Set reset button event listener 
+        document.getElementById("resetButton").addEventListener("click", function () {
+            x = 50;
+            y = 150;
+            color = "red";
+            arrowX = 450;
+            arrowY = 150;
+            arrowColor = "blue";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            draw();
+        }); 
+    </script>
+</body>
+
+</html>
